@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'screens/home.dart';
+import 'package:notice_board_app/screens/default_tabbar.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,7 +16,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.teal,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Home(),
+      home: MyDefaultTabbar(),
     );
   }
 }
