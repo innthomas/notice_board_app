@@ -12,15 +12,20 @@ class Home extends StatelessWidget {
           title: Text("NoticeBoard"),
           bottom: TabBar(
             tabs: [
-              Text("data"),
-              Text("data"),
-              Text("data"),
-              Text("data"),
+              Text("News"),
+              Text("Pinned"),
+              Text("Duty Roster"),
+              Text("timesTable"),
             ],
           ),
         ),
         body: TabBarView(
-          children: [],
+          children: [
+            Text("data"),
+            Text("data"),
+            Text("data"),
+            Text("data"),
+          ],
         ),
       ),
     );
