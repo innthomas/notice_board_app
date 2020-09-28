@@ -4,7 +4,12 @@ class News {
   final String id;
   final String author;
 
-  News({this.title, this.description, this.id, this.author});
+  News({
+    this.title,
+    this.description,
+    this.id,
+    this.author,
+  });
 
   News.fromMap(Map<String, dynamic> data, String id)
       : title = data["title"],
@@ -13,6 +18,10 @@ class News {
         id = id;
 
   Map<String, dynamic> toMap() {
-    return {"title": title, "description": description, "author": author};
+    return {
+      "title": title,
+      "description": description,
+      "author": author,
+    };
   }
 }
