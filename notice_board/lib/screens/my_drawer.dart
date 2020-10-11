@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:notice_board/screens/notice_board.dart';
+
+import 'notice_board_settings.dart';
 
 class MyDrawer extends StatelessWidget {
   @override
@@ -16,9 +19,19 @@ class MyDrawer extends StatelessWidget {
               child: Image.asset("images/notice5.png"),
             ),
             SizedBox(height: 20.0),
-            CircleAvatar(
-              child: Image.asset("images/notice7.jpeg"),
-              radius: 50.0,
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => NoticeBoardSettings()),
+                );
+              },
+              child: CircleAvatar(
+                backgroundColor: Colors.white,
+                child: Image.asset("images/settings.png"),
+                radius: 50.0,
+              ),
             ),
             SizedBox(height: 20.0),
             CircleAvatar(

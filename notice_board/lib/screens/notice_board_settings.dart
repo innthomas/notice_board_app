@@ -1,17 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:notice_board/firebase_service/firebase_service.dart';
 import 'package:notice_board/model/model.dart';
-import 'package:notice_board/pages/add_news.dart';
-import 'package:notice_board/pages/news_detail.dart';
+import 'package:notice_board/pages/add_notice.dart';
+import 'package:notice_board/pages/notice_detail.dart';
 
-class MyNews extends StatelessWidget {
+class NoticeBoardSettings extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.grey[400],
-        centerTitle: true,
-        title: Text('News'),
+        backgroundColor: Colors.grey,
+        actions: [
+          IconButton(
+              icon: Icon(Icons.add),
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (_) => AddNewsPage()));
+              })
+        ],
+        title: Text("NoticeBoardSettings"),
       ),
       body: StreamBuilder(
         stream: FirestoreService().getNews(),
@@ -46,15 +53,6 @@ class MyNews extends StatelessWidget {
                   trailing: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
-                      // IconButton(
-                      //  color: Colors.blue,
-                      //  icon: Icon(Icons.edit),
-                      //  onPressed: () => Navigator.push(
-                      //    context,
-                      //   MaterialPageRoute(
-                      //    builder: (_) => AddNewsPage(),
-                      //    )),
-                      // ),
                       IconButton(
                         color: Colors.red,
                         icon: Icon(Icons.delete),
@@ -74,14 +72,6 @@ class MyNews extends StatelessWidget {
               );
             },
           );
-        },
-      ),
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.grey,
-        child: Icon(Icons.add),
-        onPressed: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (_) => AddNewsPage()));
         },
       ),
     );

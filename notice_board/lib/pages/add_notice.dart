@@ -35,7 +35,7 @@ class _AddNewsPageState extends State<AddNewsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(isEditNews ? 'Edit News' : 'Add News'),
+        title: Text(isEditNews ? 'Edit Notice' : 'Add Notice'),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),

@@ -10,19 +10,34 @@ class NewsDetailsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.grey,
-        title: Text("${news.title} details by ${news.author}"),
+        title: Text("${news.title} details "),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(32.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text(
-              news.title,
-              style: Theme.of(context)
-                  .textTheme
-                  .headline6
-                  .copyWith(fontWeight: FontWeight.bold, fontSize: 20.0),
+            Row(
+              children: [
+                Text(
+                  news.title,
+                  style: Theme.of(context)
+                      .textTheme
+                      .headline6
+                      .copyWith(fontWeight: FontWeight.bold, fontSize: 20.0),
+                ),
+                SizedBox(
+                  width: 20.0,
+                ),
+                Text(
+                  news.author,
+                  style: TextStyle(
+                    fontSize: 15.0,
+                    color: Colors.blueGrey,
+                    fontFamily: "FugazOne",
+                  ),
+                )
+              ],
             ),
             const SizedBox(height: 20.0),
             Text(

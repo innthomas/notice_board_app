@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:notice_board/screens/duty_roster.dart';
 import 'package:notice_board/screens/my_drawer.dart';
-import 'package:notice_board/screens/news.dart';
-import 'package:notice_board/screens/pinned.dart';
+import 'package:notice_board/screens/notice_board.dart';
+import 'package:notice_board/screens/my_news.dart';
 
 class MyDefaultTabbar extends StatelessWidget {
   @override
@@ -29,7 +29,7 @@ class MyDefaultTabbar extends StatelessWidget {
             ),
           ),
           bottom: TabBar(
-            unselectedLabelColor: Colors.redAccent,
+            unselectedLabelColor: Colors.white,
             indicatorSize: TabBarIndicatorSize.label,
             indicator: BoxDecoration(
               borderRadius: BorderRadius.circular(50),
@@ -43,7 +43,7 @@ class MyDefaultTabbar extends StatelessWidget {
                 child: Align(
                   alignment: Alignment.center,
                   child: Text(
-                    "news",
+                    "Notice Board",
                   ),
                 ),
               ),
@@ -54,7 +54,7 @@ class MyDefaultTabbar extends StatelessWidget {
                 child: Align(
                   alignment: Alignment.center,
                   child: Text(
-                    "duty roster",
+                    "Global News",
                   ),
                 ),
               ),
@@ -65,7 +65,7 @@ class MyDefaultTabbar extends StatelessWidget {
                 child: Align(
                   alignment: Alignment.center,
                   child: Text(
-                    "pinned",
+                    "Duty Roster",
                   ),
                 ),
               ),
@@ -74,9 +74,9 @@ class MyDefaultTabbar extends StatelessWidget {
         ),
         body: TabBarView(
           children: <Widget>[
+            NoticeBoard(),
             MyNews(),
             MyDutyRoster(),
-            MyPinned(),
           ],
         ),
       ),
