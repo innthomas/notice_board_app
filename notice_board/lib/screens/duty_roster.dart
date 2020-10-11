@@ -10,7 +10,7 @@ class MyDutyRoster extends StatelessWidget {
           style: TextStyle(color: Colors.red, fontSize: 20.0),
         ),
       ),
-      color: Colors.green,
+      color: Colors.white12,
     );
   }
 }
